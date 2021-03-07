@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/ios7-inspired-mac-icon-set/1024/Calculator_5122x.png">
+    <title>Scientific Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="Calculator.js"></script>
+</head>
+<body>
+    
+    <div>
+        <h1>Scientific Calculator</h1>
+    </div>
+    <form name="sci-cal" class="tabl calculator">
+      
+        <div style="padding-top:20px">
+          <input class="solution" name="display" value="0" size="28" maxlength="25">
+        </div>
+        <div class="container">
+          <div class="row">
+            <input type="button" class="col-2 box symbol" id="c" name="btnTop" value="C" 
+                onclick="this.form.display.value =  0 ">
+            <input type="button" class="col-2 box symbol" name="btnTop" value="("
+            onclick="addChar(this.form.display, '(')">
+            <input type="button" class="col-2 box symbol" name="btnMath" value=")" onclick="addChar(this.form.display,')')">
+            <input type="button" class="col-2 box symbol" name="btnTop" value="Del" onclick="deleteChar(this.form.display)">
+          </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+            <input type="button" class="col-2 box num" name="box" value="7"
+             onclick="addChar(this.form.display, '7')">
+
+             <input type="button" class="col-2 box num" value="8"
+             onclick="addChar(this.form.display, '8')">
+
+             <input type="button" class="col-2 box num" value="9"
+             onclick="addChar(this.form.display, '9')">
+
+             <input type="button" class="col-2 box symbol" value="√"
+             onclick="if(checkNum(this.form.display.value)) { sqrt(this.form) }">
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+            <input type="button" class="col-2 box num" value="4"
+            onclick="addChar(this.form.display, '4')">
+
+          <input type="button" class="col-2 box num" value="5"
+          onclick="addChar(this.form.display, '5')">
+
+          <input type="button" class="col-2 box num" value="6"
+             onclick="addChar(this.form.display, '6')">
+
+          <div class="col-2 box symbol">x!</div>
+
+          
+
+          
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <input type="button" class="col-2 box num" value="1"
+             onclick="addChar(this.form.display, '1')">
+
+             <input type="button" class="col-2 box num" value="2"
+             onclick="addChar(this.form.display, '2')">
+
+             <input type="button" class="num col-2 box" value="3"
+             onclick="addChar(this.form.display, '3')">
+
+          <input type="button" class="col-2 box symbol" value="log"
+          onclick="if(checkNum(this.form.display.value)) { ln(this.form) }">
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <input type="button" class="col-2 box symbol" value="."
+             onclick="addChar(this.form.display, '.')">
+          
+             <input type="button" class="col-2 box num" value="0"
+             onclick="addChar(this.form.display, '0')">
+
+             <input type="button" class="col-2 box symbol" id="equal" value="="
+             onclick="addChar(this.form.display, '=')">
+
+             <input type="button" class="col-2 box symbol" value="x&#170"
+             onclick="if(checkNum(this.form.display.value)) { square(this.form) }">
+          
+        </div>
+      </div>
+    </form>
+</body>
+</html>
