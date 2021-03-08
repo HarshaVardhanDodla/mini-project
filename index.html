@@ -58,8 +58,10 @@
           <input type="button" class="col-2 box num" value="6"
              onclick="addChar(this.form.display, '6')">
 
-          <div class="col-2 box symbol">x!</div>
+          
 
+          <input type="button" class="col-2 box symbol" value="x!"
+          onclick="if(checkNum(this.form.display.value)) {factorial(this.form)}">
           
 
           
@@ -88,8 +90,8 @@
              <input type="button" class="col-2 box num" value="0"
              onclick="addChar(this.form.display, '0')">
 
-             <input type="button" class="col-2 box symbol" id="equal" value="="
-             onclick="addChar(this.form.display, '=')">
+             <input type="button" class="col-2 box symbol" id="eq" value="="
+             onclick="equals(this.form)">
 
              <input type="button" class="col-2 box symbol" value="x&#170"
              onclick="if(checkNum(this.form.display.value)) { square(this.form) }">

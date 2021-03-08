@@ -1,5 +1,4 @@
 
-
 function addChar(input, character) {
 	if(input.value == null || input.value == "0")
 		input.value = character
@@ -19,23 +18,32 @@ function deleteChar(input) {
 	input.value = input.value.substring(0, input.value.length - 1)
 }
 
+function equals(form) {
+	if ((form.display.value).indexOf("^") > -1) {
+	  var base = (form.display.value).slice(0, (form.display.value).indexOf("^"));
+	  var exponent = (form.display.value).slice((form.display.value).indexOf("^") + 1);
+	  form.display.value = eval("Math.pow(" + base + "," + exponent + ")");
+	} else {
+	  form.display.value = eval(form.display.value);
+	}
+  }
+
 function square(form) {
-	form.display.value = eval(form.display.value) * eval(form.display.value)
-    //need to change
+	form.display.value = (form.display.value) + "^"
 }
 
-function factorial() {
+function factorial(form) {
 	var result = 1;
-	if (display.value === 0) {
-	  display.value = "1";
-	} else if (display.value < 0) {
-	  display.value = "undefined";
+	if (form.display.value === 0) {
+	  form.display.value = "1";
+	} else if (form.display.value < 0) {
+	  form.display.value = "undefined";
 	} else {
 	  var result = 1;
-	  for (var i = display.value; i > 0; i--) {
+	  for (var i = form.display.value; i > 0; i--) {
 		result = result * i;
 	  }
-	  display.value = result;
+	  form.display.value = result;
 	}
   }
 
